@@ -10,14 +10,16 @@ import { Route, Routes } from 'react-router-dom'
 import ForgotPassword from './pages/ForgotPassword'
 import ResetPassword from './pages/ResetPassword'
 import Navbar from './components/Navbar'
+import { Toaster } from 'react-hot-toast'
+import Products from './pages/Products'
 
 export const App = () => {
   return (
-    <> 
-       <Navbar />
+    <>
+      <Toaster position="top-center" />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
         <Route path="/contact" element={<ContactUs />} />
 
         {/* auth pages  */}
@@ -27,8 +29,8 @@ export const App = () => {
         <Route path="/reset-password" element={<ResetPassword />} />
 
         {/* shop pages  */}
-        <Route path="/product" element={<ProductDetail />} />
-        <Route path="/product/:name" element={<ProductDetail />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/products/:name" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart />} />
 
         {/* not found  */}
